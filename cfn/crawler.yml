@@ -49,9 +49,9 @@ Resources:
     Type: AWS::Glue::Crawler
     Properties:
       Name: !Ref CFNCrawlerName
-      Role: !GetAtt CFNRoleFlights.Arn
+      Role: !GetAtt CFNRoleImba.Arn
       #Classifiers: none, use the default classifier
-      Description: AWS Glue crawler to crawl flights data
+      Description: AWS Glue crawler to crawl imba data
       #Schedule: none, use default run-on-demand
       DatabaseName: !Ref CFNDatabaseName
       Targets:
