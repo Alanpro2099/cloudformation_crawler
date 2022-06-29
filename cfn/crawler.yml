@@ -1,0 +1,17 @@
+Parameters:
+  CFNDatabaseName:
+    Type: String
+    Default: cfn-mysampledatabse
+
+# Resources section defines metadata for the Data Catalog
+Resources:
+# Create an AWS Glue database
+  CFNDatabaseFlights:
+    Type: AWS::Glue::Database
+    Properties:
+      # The database is created in the Data Catalog for your account
+      CatalogId: !Ref AWS::AccountId   
+      DatabaseInput:
+        Name: !Ref CFNDatabaseName	
+        Description: Database to hold tables for imba data
+        LocationUri: s3://imba-alan/data/
